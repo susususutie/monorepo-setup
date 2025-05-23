@@ -3,15 +3,14 @@
   "type": "module",
   "version": "0.0.0",
   "description": "_description_",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com>",
+  "author": "sutie <susususutie@gmail.com>",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/pkg-other#readme",
+  "homepage": "https://github.com/susususutie/monorepo-setup/tree/main/packages/pkg-other#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/pkg-other.git"
+    "url": "git+https://github.com/susususutie/monorepo-setup.git"
   },
-  "bugs": "https://github.com/antfu/pkg-other/issues",
+  "bugs": "https://github.com/susususutie/monorepo-setup/issues",
   "keywords": [],
   "sideEffects": false,
   "exports": {
