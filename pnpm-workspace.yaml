@@ -4,6 +4,10 @@ packages:
   - packages/*
   - examples/*
 
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+
 catalog:
   '@antfu/eslint-config': ^4.2.1
   '@antfu/ni': ^23.3.1
