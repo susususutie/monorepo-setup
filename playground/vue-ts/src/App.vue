@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { version as viteVersion } from 'vite/package.json'
+import { version as vueVersion } from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
@@ -11,7 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld :msg="`Vite@${viteVersion} + Vue@${vueVersion}`" />
 </template>
 
 <style scoped>
@@ -21,9 +23,11 @@ import HelloWorld from './components/HelloWorld.vue'
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }

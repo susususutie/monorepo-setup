@@ -1,3 +1,4 @@
+import { version as viteVersion } from 'vite/package.json'
 import { useState, version } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -16,7 +17,7 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React v{version}</h1>
+      <h1>Vite@{viteVersion} + React@{version}</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
