@@ -1,54 +1,7 @@
 {
-  "type": "monorepo-setup",
   "version": "0.0.0",
   "private": true,
   "packageManager": "pnpm@10.4.0",
-  "scripts": {
-    "build": "nr -r build",
-    "dev": "nr -r dev",
-    "lint": "eslint --cache .",
-    "prepublishOnly": "nr build",
-    "docs": "pnpm -C docs run docs:dev",
-    "docs:build": "pnpm -C docs run docs:build",
-    "release": "bumpp -r && pnpm -r publish",
-    "test": "vitest",
-    "typecheck": "tsc --noEmit",
-    "prepare": "simple-git-hooks"
-  },
-  "devDependencies": {
-    "@antfu/eslint-config": "catalog:",
-    "@antfu/ni": "catalog:",
-    "@antfu/utils": "catalog:",
-    "@eslint/js": "catalog:",
-    "@types/node": "catalog:",
-    "@types/react": "catalog:",
-    "@types/react-dom": "catalog:",
-    "@vitejs/plugin-react-swc": "catalog:",
-    "@vitejs/plugin-vue": "catalog:",
-    "@vue/tsconfig": "catalog:",
-    "bumpp": "catalog:",
-    "eslint": "catalog:",
-    "eslint-plugin-react-hooks": "catalog:",
-    "eslint-plugin-react-refresh": "catalog:",
-    "globals": "catalog:",
-    "lint-staged": "catalog:",
-    "pkg-placeholder": "workspace:*",
-    "pnpm": "catalog:",
-    "react": "catalog:",
-    "react-dom": "catalog:",
-    "simple-git-hooks": "catalog:",
-    "tsx": "catalog:",
-    "typescript": "catalog:",
-    "typescript-eslint": "catalog:",
-    "unbuild": "catalog:",
-    "vite": "catalog:",
-    "vitest": "catalog:",
-    "vue-tsc": "catalog:"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix"
-  }
+  "scripts": {},
+  "devDependencies": {}
 }

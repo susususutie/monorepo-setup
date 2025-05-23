@@ -19,7 +19,18 @@
 
 ## workspace
 
-packages 新增一项子包后，需要先在 pnpm-workspace.yaml 的 catalog 中添加依赖包和指明版本号如 `react: ^19.1.0`，再更改根路径下 package.json 中添加依赖`"react": "catalog:"`，然后在根目录执行` pnpm install` 安装依赖，最后才可在子包的 `package.json` 中添加依赖并使用。
+### 新增catalog依赖
+
+1. 项目中执行 `corepack pnpm add -D eslint-plugin-react` 等待安装成功
+2. 在 pnpm-workspace.yaml 中添加刚刚安装的依赖包和指明版本号如 `eslint-plugin-react: ^7.37.5`
+3. 在 package.json 中对应包的版本号改为 `catalog:`，如 `"eslint-plugin-react": "catalog:",`
+
+此时项目根路径已存在该依赖包，接下来只需要进入子项目安装依赖，就会默认使用根路径下的依赖包。
+
+1. `cd playground/react-ts/` 进入子项目目录
+2. 执行 `corepack pnpm add -D eslint-plugin-react` 安装依赖
+
+子项目的 package.json 中成功增加一项依赖 `"eslint-plugin-react": "catalog:",`
 
 ## 协同开发
 

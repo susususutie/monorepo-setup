@@ -2,8 +2,6 @@ import { useState, version } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {one, test } from 'pkg-other'
-import {two} from 'pkg-placeholder'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,7 +22,7 @@ function App() {
           count is {count}
         </button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR one:{test(one,1)} two:{two}
+          Edit <code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">
