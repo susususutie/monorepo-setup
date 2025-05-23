@@ -1,39 +1,105 @@
 {
-  // Disable the default formatter, use eslint instead
-  "prettier.enable": false,
-  "editor.formatOnSave": false,
+  "files.eol": "\n",
+
+  "_comment_prettier": "当项目中没有 prettier 的配置文件时，插件默认使用此处配置",
+  "prettier.printWidth": 120,
+  "prettier.tabWidth": 2,
+  "prettier.semi": false,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.vueIndentScriptAndStyle": false,
+  "prettier.trailingComma": "es5",
+  "prettier.arrowParens": "avoid",
+
+  "__comment_editor.rulers": "只控制竖线显示位置，可设置多条，最好与 prettier.printWidth 的配置保持一致",
+  "editor.rulers": [120],
+  "editor.guides.indentation": true,
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "editor.fontFamily": "'Sarasa Mono SC', Consolas",
+  "editor.minimap.enabled": false,
+  "editor.minimap.autohide": true,
+  "editor.detectIndentation": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.allowedLocales": {
+    "cs": true
+  },
+  "editor.accessibilitySupport": "off",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  
-  // Auto fix
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.insertMode": "replace"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
-  // Silent the stylistic rules in you IDE, but still auto fix them
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  },
+  "git-graph.date.format": "ISO Date & Time",
+
+  "cSpell.numSuggestions": 3,
+  "cSpell.useGitignore": true,
+  "cSpell.userWords": [
+    "ahooks",
+    "antd",
+    "cssinjs",
+    "echarts",
+    "hoverable",
+    "iconfont",
+    "juejin",
+    "matchs",
+    "mockjs",
+    "pinia",
+    "sutie",
+    "vite",
+    "vitejs",
+    "vitepress",
+    "vitest"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules",
+    "package.json",
+    "package-lock.json",
+    "yarn.lock",
+    "pnpm",
+    "pnpm-lock.yaml",
+    ".vscode/**",
+    "vscode-extension",
+    ".vscode-insiders",
+    ".git",
+    ".git/objects",
+    "settings.json",
+    "tsconfig.json"
   ],
 
-  // Enable eslint for all supported languages
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml"
-  ]
+  "window.commandCenter": true
 }
