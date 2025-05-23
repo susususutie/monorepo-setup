@@ -24,6 +24,7 @@
     "dist"
   ],
   "scripts": {
+    "postinstall": "unbuild",
     "build": "unbuild",
     "dev": "unbuild --stub",
     "prepublishOnly": "unbuild",
