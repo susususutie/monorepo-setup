@@ -19,6 +19,7 @@
     "@types/react-dom": "catalog:react18",
     "@vitejs/plugin-react": "catalog:",
     "eslint": "catalog:",
+    "eslint-plugin-react": "catalog:",
     "eslint-plugin-react-hooks": "catalog:",
     "eslint-plugin-react-refresh": "catalog:",
     "globals": "catalog:",
