@@ -181,6 +181,9 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.20.1(jiti@2.4.2)
+      eslint-plugin-react:
+        specifier: 'catalog:'
+        version: 7.37.5(eslint@9.20.1(jiti@2.4.2))
       eslint-plugin-react-hooks:
         specifier: 'catalog:'
         version: 5.2.0(eslint@9.20.1(jiti@2.4.2))
