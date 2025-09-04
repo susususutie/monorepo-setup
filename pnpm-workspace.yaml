@@ -19,13 +19,14 @@ catalog:
   '@vitejs/plugin-react-swc': ^3.8.0
   vite-tsconfig-paths: ^5.1.4
   vitest: ^3.0.5
+  '@vitest/coverage-v8': ^3.0.5
   vue: ^3.5.13
   vue-tsc: ^2.2.10
   '@vue/tsconfig': ^0.7.0
-  react: ^19.1.0
-  react-dom: ^19.1.0
-  '@types/react': ^19.0.10
-  '@types/react-dom': ^19.0.4
+  react: ^18.3.1
+  react-dom: ^18.3.1
+  '@types/react': ^18.3.24
+  '@types/react-dom': ^18.3.7
   eslint: ^9.20.1
   '@eslint/js': ^9.22.0
   eslint-plugin-react: ^7.37.5
@@ -34,9 +35,3 @@ catalog:
   typescript-eslint: ^8.26.1
   globals: ^16.0.0
 
-catalogs:
-  react18:
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    '@types/react': ^18.3.1
-    '@types/react-dom': ^18.3.1

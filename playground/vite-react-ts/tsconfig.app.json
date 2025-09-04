@@ -14,6 +14,12 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "pkg-components": ["../../packages/pkg-components/src"],
+      "pkg-other": ["../../packages/pkg-other/src"],
+      "pkg-placeholder": ["../../packages/pkg-placeholder/src"]
+    },
 
     /* Linting */
     "strict": true,

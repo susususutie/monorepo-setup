@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pkg-components": "workspace:*",
     "pkg-other": "workspace:*",
-    "pkg-placeholder": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

@@ -1,40 +1,146 @@
 # monorepo-setup
 
-pnpm monorepo 项目示例
+基于 pnpm 的现代化 monorepo 项目示例，展示单仓库管理最佳实践。
 
-## workspace
+## ✨ 特性
 
-### 新增catalog依赖
+- 🚀 **现代工具链**：pnpm workspace + catalog 依赖管理
+- 📦 **模块化架构**：支持 tree-shaking 的工具库
+- 🔧 **实时开发**：热更新和类型同步
+- 🎯 **多种导入**：完整/按需/模块化导入
+- 🏗️ **多框架支持**：React/Vue/TypeScript 示例应用
 
-1. 项目中执行 `corepack pnpm add -D eslint-plugin-react` 等待安装成功
-2. 在 pnpm-workspace.yaml 中添加刚刚安装的依赖包和指明版本号如 `eslint-plugin-react: ^7.37.5`
-3. 在 package.json 中对应包的版本号改为 `catalog:`，如 `"eslint-plugin-react": "catalog:",`
+## 🚀 快速开始
 
-此时项目根路径已存在该依赖包，接下来只需要进入子项目安装依赖，就会默认使用根路径下的依赖包。
+```bash
+# 安装依赖
+pnpm install
 
-1. `cd playground/vite-react-ts/` 进入子项目目录
-2. 执行 `corepack pnpm add -D eslint-plugin-react` 安装依赖
+# 构建所有包
+pnpm build
 
-子项目的 package.json 中成功增加一项依赖 `"eslint-plugin-react": "catalog:",`
+# 运行测试
+pnpm test
 
-## 协同开发
-
-在 packages 中开发库组件时，同时在 playground 的项目中引用并实时预览。目前暂时没有特别好的解决方案。唯一有可行性的方案是：
-
-```javascript
-// packages/pkg-other 为库项目
-// playground/vite-react-ts 为预览项目，依赖库项目
-//
-// packages/pkg-other:
-// pnpm build 打包
-// playground/vite-react-ts 中
-// package.json:
-// "pkg-other": "workspace:*",
-// vite.config.ts 中,以保证在pkg-other变更后，vite能热更新
-// resolve: {
-//   alias: {
-//     "pkg-other": path.resolve(__dirname, '../../packages/pkg-other/src'),
-//   }
-// }
-// 缺点是，pkg-other中的ts类型无法实时更新，类型变化后需要手动build，vite-react-ts才不会有ts报错
+# 启动开发环境
+pnpm dev
 ```
+
+访问示例应用：
+
+- React TypeScript: http://localhost:5173
+- Vue TypeScript: http://localhost:5175
+- Vanilla TypeScript: http://localhost:5176
+
+## 📦 主要包
+
+### pkg-other - 工具函数库
+
+13 个独立模块，完整的 TypeScript 工具库：
+
+```typescript
+// 按需导入（推荐）
+import { clamp, capitalize, unique } from 'pkg-other'
+
+// 模块化导入（最佳 tree-shaking）
+import { clamp } from 'pkg-other/math'
+import { capitalize } from 'pkg-other/string'
+import { LRUCache } from 'pkg-other/cache'
+
+// 使用示例
+const result = clamp(10, 0, 5) // 5
+const title = capitalize('hello') // 'Hello'
+const cache = new LRUCache<string, any>(100)
+```
+
+**功能模块**：math、string、array、object、async、date、validator、event、cache、error、constants、types
+
+### pkg-components - React 组件库
+
+基于 React 18 + Ant Design 的 UI 组件库。
+
+## 🛠️ 开发指南
+
+### Catalog 依赖管理
+
+```bash
+# 1. 根目录安装新依赖
+pnpm add -D eslint-plugin-react
+
+# 2. 更新 pnpm-workspace.yaml
+catalog:
+  eslint-plugin-react: ^7.37.5
+
+# 3. 子项目引用
+pnpm --filter vite-react-ts add -D eslint-plugin-react
+```
+
+### 实时开发配置
+
+```typescript
+// playground/vite-react-ts/vite.config.ts
+export default defineConfig({
+  resolve: {
+    alias: {
+      'pkg-components': resolve(__dirname, '../../packages/pkg-components/src'),
+      'pkg-other': resolve(__dirname, '../../packages/pkg-other/src'),
+    },
+  },
+})
+```
+
+```json
+// playground/vite-react-ts/tsconfig.app.json
+{
+  "compilerOptions": {
+    "paths": {
+      "pkg-components": ["../../packages/pkg-components/src"],
+      "pkg-other": ["../../packages/pkg-other/src"]
+    }
+  }
+}
+```
+
+### 常用命令
+
+```bash
+# 构建
+pnpm build                                    # 所有包
+pnpm --filter pkg-other build                # 指定包
+pnpm --filter "./packages/*" -r --parallel run build  # 并行构建
+
+# 测试
+pnpm test                                     # 所有测试
+pnpm --filter pkg-other test:coverage        # 覆盖率报告
+
+# 开发
+pnpm dev                                      # 所有应用
+pnpm --filter vite-react-ts dev              # 指定应用
+
+# 依赖管理
+pnpm --filter pkg-other add lodash           # 添加依赖
+pnpm -r clean                                # 清理缓存
+```
+
+## 🕰️ 最佳实践
+
+- **模块化设计**: 每个模块独立功能，避免耦合
+- **Tree-shaking**: 配置 `sideEffects: false` 和 exports 字段
+- **版本管理**: Catalog 统一管理，React 18.3.1 一致性
+- **测试策略**: 全面覆盖，边界测试，Tree-shaking 验证
+
+## 🤝 贡献
+
+1. Fork 项目并克隆到本地
+2. 安装依赖: `pnpm install`
+3. 创建分支: `git checkout -b feature/your-feature`
+4. 进行开发并运行测试: `pnpm test`
+5. 提交并创建 Pull Request
+
+## 📄 许可证
+
+MIT License
+
+---
+
+🎆 **现代化 monorepo 管理最佳实践，从 workspace 配置到 tree-shaking 优化的一站式学习资源。**
