@@ -59,6 +59,10 @@ const cache = new LRUCache<string, any>(100)
 
 基于 React 18 + Ant Design 的 UI 组件库。
 
+### pkg-vue-ui - Vue UI 组件库
+
+基于 Vue 3 + TypeScript 的 UI 组件库。
+
 ## 🛠️ 开发指南
 
 ### Catalog 依赖管理
@@ -79,10 +83,12 @@ pnpm --filter vite-react-ts add -D eslint-plugin-react
 
 ```typescript
 // playground/vite-react-ts/vite.config.ts
+// https://vite.dev/config/
 export default defineConfig({
   resolve: {
     alias: {
       'pkg-react-ui': resolve(__dirname, '../../packages/pkg-react-ui/src'),
+      'pkg-vue-ui': resolve(__dirname, '../../packages/pkg-vue-ui/src'),
       'pkg-other': resolve(__dirname, '../../packages/pkg-other/src'),
     },
   },
@@ -95,6 +101,7 @@ export default defineConfig({
   "compilerOptions": {
     "paths": {
       "pkg-react-ui": ["../../packages/pkg-react-ui/src"],
+      "pkg-vue-ui": ["../../packages/pkg-vue-ui/src"],
       "pkg-other": ["../../packages/pkg-other/src"]
     }
   }

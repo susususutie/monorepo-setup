@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pkg-vue-ui": "workspace:*",
+    "pkg-other": "workspace:*",
     "vue": "catalog:"
   },
   "devDependencies": {

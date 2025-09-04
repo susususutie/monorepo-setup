@@ -1,0 +1,66 @@
+{
+  "name": "pkg-vue-ui",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Vue 3 + TypeScript UI components library",
+  "author": "sutie <susususutie@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/susususutie/monorepo-setup/tree/main/packages/pkg-vue-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susususutie/monorepo-setup.git"
+  },
+  "bugs": "https://github.com/susususutie/monorepo-setup/issues",
+  "keywords": [
+    "vue",
+    "vue3",
+    "typescript",
+    "ui-components",
+    "component-library"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./button": {
+      "types": "./dist/button/index.d.ts",
+      "import": "./dist/button/index.mjs",
+      "require": "./dist/button/index.cjs"
+    },
+    "./card": {
+      "types": "./dist/card/index.d.ts",
+      "import": "./dist/card/index.mjs",
+      "require": "./dist/card/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "prepublishOnly": "unbuild"
+  },
+  "dependencies": {
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "typescript": "catalog:",
+    "unbuild": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  }
+}
