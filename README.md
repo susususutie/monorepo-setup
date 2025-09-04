@@ -55,7 +55,7 @@ const cache = new LRUCache<string, any>(100)
 
 **功能模块**：math、string、array、object、async、date、validator、event、cache、error、constants、types
 
-### pkg-components - React 组件库
+### pkg-react-ui - React UI 组件库
 
 基于 React 18 + Ant Design 的 UI 组件库。
 
@@ -82,7 +82,7 @@ pnpm --filter vite-react-ts add -D eslint-plugin-react
 export default defineConfig({
   resolve: {
     alias: {
-      'pkg-components': resolve(__dirname, '../../packages/pkg-components/src'),
+      'pkg-react-ui': resolve(__dirname, '../../packages/pkg-react-ui/src'),
       'pkg-other': resolve(__dirname, '../../packages/pkg-other/src'),
     },
   },
@@ -94,7 +94,7 @@ export default defineConfig({
 {
   "compilerOptions": {
     "paths": {
-      "pkg-components": ["../../packages/pkg-components/src"],
+      "pkg-react-ui": ["../../packages/pkg-react-ui/src"],
       "pkg-other": ["../../packages/pkg-other/src"]
     }
   }

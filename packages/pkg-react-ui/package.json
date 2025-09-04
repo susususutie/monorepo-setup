@@ -1,11 +1,11 @@
 {
-  "name": "pkg-components",
+  "name": "pkg-react-ui",
   "type": "module",
   "version": "0.0.0",
-  "description": "react + antd components",
+  "description": "React + Antd UI components library",
   "author": "sutie <susususutie@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/susususutie/monorepo-setup/tree/main/packages/pkg-components#readme",
+  "homepage": "https://github.com/susususutie/monorepo-setup/tree/main/packages/pkg-react-ui#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/susususutie/monorepo-setup.git"

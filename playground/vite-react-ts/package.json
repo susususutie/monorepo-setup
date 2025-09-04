@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "pkg-components": "workspace:*",
+    "pkg-react-ui": "workspace:*",
     "pkg-other": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"

@@ -7,9 +7,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "pkg-components": path.resolve(__dirname, '../../packages/pkg-components/src'),
+      "pkg-react-ui": path.resolve(__dirname, '../../packages/pkg-react-ui/src'),
       "pkg-other": path.resolve(__dirname, '../../packages/pkg-other/src'),
-      "pkg-placeholder": path.resolve(__dirname, '../../packages/pkg-placeholder/src'),
     }
   },
 })

@@ -4,7 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { one, test, capitalize, formatDate, Status, CONFIG } from 'pkg-other'
-import { Demo } from 'pkg-components'
+import { Demo } from 'pkg-react-ui'
 
 function App() {
   const [count, setCount] = useState(0)
