@@ -1,5 +1,5 @@
 /**
- * pkg-other - TypeScript 工具函数库
+ * pkg-utils - TypeScript 工具函数库
  * 
  * 一个模块化的工具函数库，提供常用的工具函数和类型定义
  */

@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { version as viteVersion } from 'vite/package.json'
 import { version as vueVersion } from 'vue'
-import { formatDate, capitalize, one, test, Status, CONFIG } from 'pkg-other'
+import { formatDate, capitalize, one, test, Status, CONFIG } from 'pkg-utils'
 import { createVueMessage, version as vueUiVersion } from 'pkg-vue-ui'
 import HelloWorld from './components/HelloWorld.vue'
 import ImportDemo from './components/NamedImportDemo.vue'
 // import ImportDemo from './components/PathImportDemo.vue'
 // import ImportDemo from './components/AdvancedUsageDemo.vue'
 
-// 使用pkg-other工具函数
+// 使用pkg-utils工具函数
 const currentTime = formatDate(new Date(), 'YYYY-MM-DD HH:mm')
 const appTitle = capitalize('vue playground demo')
 const mathResult = test(one, 1)
@@ -58,7 +58,7 @@ const showComponentInfo = () => {
   </div>
 
   <div style="margin: 20px 0; padding: 20px; border: 2px solid #646cff; border-radius: 8px; background: #f9f9f9;">
-    <h3>🛠️ pkg-other 工具库演示</h3>
+    <h3>🛠️ pkg-utils 工具库演示</h3>
     <p>数学工具: test({{ one }}, 1) = {{ mathResult }}</p>
     <p>字符串工具: capitalize('vue playground demo') = {{ appTitle }}</p>
     <p>日期工具: formatDate(当前时间) = {{ currentTime }}</p>

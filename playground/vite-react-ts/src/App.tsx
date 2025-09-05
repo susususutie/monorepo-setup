@@ -3,7 +3,7 @@ import { useState, version } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { one, test, capitalize, formatDate, Status, CONFIG } from 'pkg-other'
+import { one, test, capitalize, formatDate, Status, CONFIG } from 'pkg-utils'
 import { Demo } from 'pkg-react-ui'
 
 function App() {

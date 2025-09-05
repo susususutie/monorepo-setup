@@ -34,18 +34,18 @@ pnpm dev
 
 ## 📦 主要包
 
-### pkg-other - 工具函数库
+### pkg-utils - 工具函数库
 
 13 个独立模块，完整的 TypeScript 工具库：
 
 ```typescript
 // 按需导入（推荐）
-import { clamp, capitalize, unique } from 'pkg-other'
+import { clamp, capitalize, unique } from 'pkg-utils'
 
 // 模块化导入（最佳 tree-shaking）
-import { clamp } from 'pkg-other/math'
-import { capitalize } from 'pkg-other/string'
-import { LRUCache } from 'pkg-other/cache'
+import { clamp } from 'pkg-utils/math'
+import { capitalize } from 'pkg-utils/string'
+import { LRUCache } from 'pkg-utils/cache'
 
 // 使用示例
 const result = clamp(10, 0, 5) // 5
@@ -89,7 +89,7 @@ export default defineConfig({
     alias: {
       'pkg-react-ui': resolve(__dirname, '../../packages/pkg-react-ui/src'),
       'pkg-vue-ui': resolve(__dirname, '../../packages/pkg-vue-ui/src'),
-      'pkg-other': resolve(__dirname, '../../packages/pkg-other/src'),
+      'pkg-utils': resolve(__dirname, '../../packages/pkg-utils/src'),
     },
   },
 })
@@ -102,7 +102,7 @@ export default defineConfig({
     "paths": {
       "pkg-react-ui": ["../../packages/pkg-react-ui/src"],
       "pkg-vue-ui": ["../../packages/pkg-vue-ui/src"],
-      "pkg-other": ["../../packages/pkg-other/src"]
+      "pkg-utils": ["../../packages/pkg-utils/src"]
     }
   }
 }
@@ -113,19 +113,19 @@ export default defineConfig({
 ```bash
 # 构建
 pnpm build                                    # 所有包
-pnpm --filter pkg-other build                # 指定包
+pnpm --filter pkg-utils build                # 指定包
 pnpm --filter "./packages/*" -r --parallel run build  # 并行构建
 
 # 测试
 pnpm test                                     # 所有测试
-pnpm --filter pkg-other test:coverage        # 覆盖率报告
+pnpm --filter pkg-utils test:coverage        # 覆盖率报告
 
 # 开发
 pnpm dev                                      # 所有应用
 pnpm --filter vite-react-ts dev              # 指定应用
 
 # 依赖管理
-pnpm --filter pkg-other add lodash           # 添加依赖
+pnpm --filter pkg-utils add lodash           # 添加依赖
 pnpm -r clean                                # 清理缓存
 ```
 

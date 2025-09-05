@@ -1,5 +1,5 @@
 /**
- * pkg-other 使用演示
+ * pkg-utils 使用演示
  * 
  * 展示不同的导入方式和 tree-shaking 效果
  */
@@ -156,5 +156,5 @@ const asyncExample = async () => {
 asyncExample().catch(console.error)
 
 console.log('\n=== 演示完成 ===')
-console.log('这些示例展示了 pkg-other 的各种使用方式和 tree-shaking 能力。')
+console.log('这些示例展示了 pkg-utils 的各种使用方式和 tree-shaking 能力。')
 console.log('在实际项目中，推荐使用模块化导入以获得最佳的包大小优化效果。')

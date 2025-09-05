@@ -1,11 +1,11 @@
 {
-  "name": "pkg-other",
+  "name": "pkg-utils",
   "type": "module",
   "version": "0.0.0",
   "description": "comprehensive utility library for monorepo demonstration - includes TypeScript types, async utilities, validation, caching, event system, and performance monitoring",
   "author": "sutie <susususutie@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/susususutie/monorepo-setup/tree/main/packages/pkg-other#readme",
+  "homepage": "https://github.com/susususutie/monorepo-setup/tree/main/packages/pkg-utils#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/susususutie/monorepo-setup.git"

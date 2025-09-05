@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "pkg-react-ui": ["../../packages/pkg-react-ui/src"],
-      "pkg-other": ["../../packages/pkg-other/src"]
+      "pkg-utils": ["../../packages/pkg-utils/src"]
     },
 
     /* Linting */

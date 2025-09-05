@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "pkg-react-ui": "workspace:*",
-    "pkg-other": "workspace:*",
+    "pkg-utils": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

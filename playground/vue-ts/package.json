@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "pkg-vue-ui": "workspace:*",
-    "pkg-other": "workspace:*",
+    "pkg-utils": "workspace:*",
     "vue": "catalog:"
   },
   "devDependencies": {

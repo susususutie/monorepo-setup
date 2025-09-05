@@ -98,7 +98,7 @@ import {
   type ValidatorRule,
 } from '../src/index'
 
-describe('pkg-other', () => {
+describe('pkg-utils', () => {
   describe('基础常量', () => {
     it('应该正确导出常量', () => {
       expect(one).toBe(12)

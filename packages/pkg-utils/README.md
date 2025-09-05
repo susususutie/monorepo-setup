@@ -1,4 +1,4 @@
-# pkg-other
+# pkg-utils
 
 一个全面的 TypeScript 工具库，专为 monorepo 项目设计，展示各种前端开发场景的最佳实践。
 
@@ -142,15 +142,15 @@ import {
   LRUCache,
   Status,
   CONFIG
-} from 'pkg-other'
+} from 'pkg-utils'
 ```
 
 ### 默认导入
 ```typescript
-import pkgOther from 'pkg-other'
+import pkgUtils from 'pkg-utils'
 
-pkgOther.test(1, 2)        // 4
-pkgOther.capitalize('hi')  // 'Hi'
+pkgUtils.test(1, 2)        // 4
+pkgUtils.capitalize('hi')  // 'Hi'
 ```
 
 ### 便捷创建函数
@@ -160,7 +160,7 @@ import {
   createEventEmitter,
   createCache,
   createErrorHandler
-} from 'pkg-other'
+} from 'pkg-utils'
 ```
 
 ## 🧪 测试

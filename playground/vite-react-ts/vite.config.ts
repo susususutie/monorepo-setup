@@ -8,7 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "pkg-react-ui": path.resolve(__dirname, '../../packages/pkg-react-ui/src'),
-      "pkg-other": path.resolve(__dirname, '../../packages/pkg-other/src'),
+      "pkg-utils": path.resolve(__dirname, '../../packages/pkg-utils/src'),
     }
   },
 })
