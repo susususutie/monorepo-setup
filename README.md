@@ -136,6 +136,10 @@ pnpm -r clean                                # 清理缓存
 - **版本管理**: Catalog 统一管理，React 18.3.1 一致性
 - **测试策略**: 全面覆盖，边界测试，Tree-shaking 验证
 
+## 🔗 可视化依赖图
+
+详见文档：./docs/deps-graph.md
+
 ## 🤝 贡献
 
 1. Fork 项目并克隆到本地
