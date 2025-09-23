@@ -1,7 +1,7 @@
 {
   "name": "@monorepo-setup/pkg-react-ui",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "no-bundler React + Antd UI components library",
   "author": "sutie <susususutie@gmail.com>",
   "license": "MIT",
@@ -53,5 +53,8 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
