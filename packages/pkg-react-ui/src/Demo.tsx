@@ -1,8 +1,6 @@
+import { HeartOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons'
 import { Button, Card, Space, Typography } from 'antd'
 import { createStyles } from 'antd-style'
-import { HeartOutlined, StarOutlined, LikeOutlined } from '@ant-design/icons'
-
-const { Title, Paragraph } = Typography
 
 const useStyles = createStyles(({ token, css }) => ({
   container: css`
@@ -68,15 +66,15 @@ export default function Demo() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <Title level={2}>🎨 Antd-Style 组件示例</Title>
-        <Paragraph>这是一个使用 antd-style 创建的组件模版</Paragraph>
+        <Typography.Title level={2}>🎨 Antd-Style 组件示例</Typography.Title>
+        <Typography.Paragraph>这是一个使用 antd-style 创建的组件模版</Typography.Paragraph>
       </div>
 
       <div className={styles.content}>
-        <Paragraph>
+        <Typography.Paragraph>
           antd-style 是一个基于 CSS-in-JS 的样式解决方案，专为 Ant Design 组件库设计。
           它提供了强大的主题定制能力和类型安全的样式编写体验。
-        </Paragraph>
+        </Typography.Paragraph>
       </div>
 
       <div className={styles.actions}>

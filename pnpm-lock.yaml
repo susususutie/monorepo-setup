@@ -101,6 +101,9 @@ importers:
       '@types/react-dom':
         specifier: ^18.3.7
         version: 18.3.7(@types/react@18.3.24)
+      typescript:
+        specifier: ^5.6.3
+        version: 5.7.3
 
   packages/pkg-utils:
     devDependencies:

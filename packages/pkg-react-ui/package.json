@@ -2,7 +2,7 @@
   "name": "pkg-react-ui",
   "type": "module",
   "version": "0.0.0",
-  "description": "React + Antd UI components library",
+  "description": "no-bundler React + Antd UI components library",
   "author": "sutie <susususutie@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/susususutie/monorepo-setup/tree/main/packages/pkg-react-ui#readme",
@@ -11,14 +11,26 @@
     "url": "git+https://github.com/susususutie/monorepo-setup.git"
   },
   "bugs": "https://github.com/susususutie/monorepo-setup/issues",
-  "keywords": [],
+  "keywords": [
+    "react",
+    "antd",
+    "ui-components",
+    "component-library"
+  ],
   "sideEffects": false,
   "exports": {
-    ".": "./src/index.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./list": {
+      "types": "./dist/list/index.d.ts",
+      "import": "./dist/list/index.js"
+    }
   },
-  "types": "./src/index.ts",
+  "types": "./dist/index.d.ts",
   "files": [
-    "src"
+    "dist"
   ],
   "dependencies": {
     "@ant-design/icons": "^6.0.1",
@@ -29,6 +41,17 @@
   },
   "devDependencies": {
     "@types/react": "^18.3.24",
-    "@types/react-dom": "^18.3.7"
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": "^6.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "antd": "^5.27.2",
+    "antd-style": "^3.7.1"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
   }
 }
