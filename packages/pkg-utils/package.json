@@ -1,7 +1,7 @@
 {
-  "name": "pkg-utils",
+  "name": "@monorepo-setup/pkg-utils",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "comprehensive utility library for monorepo demonstration - includes TypeScript types, async utilities, validation, caching, event system, and performance monitoring",
   "author": "sutie <susususutie@gmail.com>",
   "license": "MIT",
@@ -101,5 +101,8 @@
     "unbuild": "catalog:",
     "vitest": "catalog:",
     "@vitest/coverage-v8": "catalog:"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

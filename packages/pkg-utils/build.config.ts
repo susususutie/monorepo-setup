@@ -25,5 +25,5 @@ export default defineBuildConfig({
     inlineDependencies: true, // 内联依赖，确保包的独立性
   },
   // 确保生成的代码支持 tree-shaking
-  failOnWarn: false,
+  // failOnWarn: false,
 })
