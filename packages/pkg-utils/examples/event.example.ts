@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中事件系统相关功能的实际使用场景
  */
 
-import { createEventEmitter } from 'pkg-utils'
+import { createEventEmitter } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：用户行为跟踪
 interface UserEvents {

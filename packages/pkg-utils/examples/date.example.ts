@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中日期处理相关功能的实际使用场景
  */
 
-import { formatDate, isWeekend, addDays, diffInDays, getDaysInMonth } from 'pkg-utils'
+import { formatDate, isWeekend, addDays, diffInDays, getDaysInMonth } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：日期格式化显示
 const now = new Date()

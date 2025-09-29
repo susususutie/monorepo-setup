@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中缓存相关功能的实际使用场景
  */
 
-import { createCache } from 'pkg-utils'
+import { createCache } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：用户信息缓存
 const userCache = createCache<string, any>(5) // 最多缓存 5 个用户

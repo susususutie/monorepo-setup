@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中字符串处理相关功能的实际使用场景
  */
 
-import { capitalize, slugify, truncate, camelCase, snakeCase } from 'pkg-utils'
+import { capitalize, slugify, truncate, camelCase, snakeCase } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：用户输入格式化
 const userName = 'john doe'

@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中类型定义相关功能的实际使用场景
  */
 
-import { User, Role, Permission, ApiResponse, Status, AsyncResult } from 'pkg-utils'
+import { User, Role, Permission, ApiResponse, Status, AsyncResult } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：用户权限管理
 const readPermission: Permission = {

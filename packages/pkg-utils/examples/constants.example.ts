@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中常量相关功能的实际使用场景
  */
 
-import { CONFIG, Status, Priority } from 'pkg-utils'
+import { CONFIG, Status, Priority } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：使用应用配置
 console.log('应用配置:')

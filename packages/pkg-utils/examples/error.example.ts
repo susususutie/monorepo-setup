@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中错误处理相关功能的实际使用场景
  */
 
-import { AppError, ErrorCodes, createError, isOperationalError } from 'pkg-utils'
+import { AppError, ErrorCodes, createError, isOperationalError } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：用户输入验证
 function validateUserInput(email: string, age: number) {

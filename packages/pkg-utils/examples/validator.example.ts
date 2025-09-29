@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中数据验证相关功能的实际使用场景
  */
 
-import { createValidator } from 'pkg-utils'
+import { createValidator } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：用户注册表单验证
 interface UserRegistration {

@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中数学工具相关功能的实际使用场景
  */
 
-import { clamp, randomBetween, round, percentage, average } from 'pkg-utils'
+import { clamp, randomBetween, round, percentage, average } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：输入值限制
 const userScore = clamp(105, 0, 100) // 限制在 0-100 范围

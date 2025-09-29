@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中数组处理相关功能的实际使用场景
  */
 
-import { unique, groupBy, chunk, shuffle } from 'pkg-utils'
+import { unique, groupBy, chunk, shuffle } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：处理用户标签数据
 const userTags = ['前端', '后端', '前端', 'UI', '后端', '测试', 'UI']

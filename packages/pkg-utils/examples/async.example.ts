@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中异步操作相关功能的实际使用场景
  */
 
-import { sleep, timeout, retry, createSafeAsync } from 'pkg-utils'
+import { sleep, timeout, retry, createSafeAsync } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：网络请求延时
 async function delayedRequest() {

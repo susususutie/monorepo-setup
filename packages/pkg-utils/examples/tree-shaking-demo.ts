@@ -4,12 +4,12 @@
  */
 
 // ===== ❌ 不推荐：导入整个库 =====
-// import * as utils from 'pkg-utils'
+// import * as utils from '@monorepo-setup/pkg-utils'
 // const result = utils.clamp(10, 0, 5)
 // 结果：整个库都会被打包，约 14KB
 
 // ===== ✅ 推荐：按需导入 =====
-import { clamp } from 'pkg-utils'
+import { clamp } from '@monorepo-setup/pkg-utils'
 // 结果：只有 clamp 函数和其依赖会被打包，约 500B
 
 // ===== ✅ 最佳：模块化导入 =====

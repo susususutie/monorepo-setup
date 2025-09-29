@@ -3,7 +3,7 @@
  * 演示 pkg-utils 中对象处理相关功能的实际使用场景
  */
 
-import { deepClone, pick, omit, merge, isEmpty } from 'pkg-utils'
+import { deepClone, pick, omit, merge, isEmpty } from '@monorepo-setup/pkg-utils'
 
 // 实际场景：用户数据克隆
 const originalUser = {
