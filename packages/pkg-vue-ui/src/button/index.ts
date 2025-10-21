@@ -1,5 +1,5 @@
 // 直接导出Button组件
-export { default } from '../components/Button.vue'
+export { default } from '../components/Button'
 
 // 组件类型定义
 export type { ButtonProps, ButtonType } from '../types'

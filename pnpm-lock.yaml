@@ -9,6 +9,9 @@ catalogs:
     '@eslint/js':
       specifier: ^9.22.0
       version: 9.25.1
+    '@types/node':
+      specifier: ^22.13.4
+      version: 22.13.4
     '@types/react':
       specifier: ^18.3.24
       version: 18.3.24
@@ -70,7 +73,7 @@ catalogs:
       specifier: ^3.5.13
       version: 3.5.13
     vue-tsc:
-      specifier: ^2.2.10
+      specifier: 2.2.10
       version: 2.2.10
 
 importers:
@@ -112,7 +115,7 @@ importers:
         version: 3.2.4(vitest@3.2.4(@types/node@22.13.4)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0))
       unbuild:
         specifier: 'catalog:'
-        version: 3.5.0(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))(vue@3.5.13(typescript@5.7.3))
+        version: 3.5.0(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))
       vitest:
         specifier: 'catalog:'
         version: 3.2.4(@types/node@22.13.4)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.7.0)
@@ -123,12 +126,15 @@ importers:
         specifier: 'catalog:'
         version: 3.5.13(typescript@5.7.3)
     devDependencies:
-      mkdist:
-        specifier: ^2.4.1
-        version: 2.4.1(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))(vue@3.5.13(typescript@5.7.3))
-      unbuild:
-        specifier: ^3.5.0
-        version: 3.5.0(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))(vue@3.5.13(typescript@5.7.3))
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.13.4
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.3
+      vue-tsc:
+        specifier: 'catalog:'
+        version: 2.2.10(typescript@5.7.3)
 
   playground/vanilla-ts:
     dependencies:
@@ -4791,7 +4797,6 @@ snapshots:
   '@types/node@22.13.4':
     dependencies:
       undici-types: 6.20.0
-    optional: true
 
   '@types/parse-json@4.0.2': {}
 
@@ -6342,7 +6347,7 @@ snapshots:
 
   minipass@7.1.2: {}
 
-  mkdist@2.4.1(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))(vue@3.5.13(typescript@5.7.3)):
+  mkdist@2.4.1(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3)):
     dependencies:
       autoprefixer: 10.4.21(postcss@8.5.6)
       citty: 0.1.6
@@ -6359,7 +6364,6 @@ snapshots:
       tinyglobby: 0.2.15
     optionalDependencies:
       typescript: 5.7.3
-      vue: 3.5.13(typescript@5.7.3)
       vue-tsc: 2.2.10(typescript@5.7.3)
 
   mlly@1.7.4:
@@ -7435,7 +7439,7 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  unbuild@3.5.0(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))(vue@3.5.13(typescript@5.7.3)):
+  unbuild@3.5.0(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3)):
     dependencies:
       '@rollup/plugin-alias': 5.1.1(rollup@4.40.1)
       '@rollup/plugin-commonjs': 28.0.3(rollup@4.40.1)
@@ -7451,7 +7455,7 @@ snapshots:
       hookable: 5.5.3
       jiti: 2.4.2
       magic-string: 0.30.17
-      mkdist: 2.4.1(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))(vue@3.5.13(typescript@5.7.3))
+      mkdist: 2.4.1(typescript@5.7.3)(vue-tsc@2.2.10(typescript@5.7.3))
       mlly: 1.7.4
       pathe: 2.0.3
       pkg-types: 2.1.0
@@ -7469,8 +7473,7 @@ snapshots:
       - vue-sfc-transformer
       - vue-tsc
 
-  undici-types@6.20.0:
-    optional: true
+  undici-types@6.20.0: {}
 
   untyped@2.0.0:
     dependencies:

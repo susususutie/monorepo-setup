@@ -2,9 +2,8 @@
 export { default, version } from './plugin'
 
 // 导出组件（用于按需导入）
-// 注意：这里显式导入Vue组件，但只在运行时使用
-export { default as Button } from './components/Button.vue'
-export { default as Card } from './components/Card.vue'
+export { default as Button } from './components/Button'
+export { default as Card } from './components/Card'
 
 // 导出组件类型
 export type { ButtonProps, ButtonType, CardProps } from './types'

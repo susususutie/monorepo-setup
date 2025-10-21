@@ -1,5 +1,5 @@
 // 直接导出Card组件
-export { default } from '../components/Card.vue'
+export { default } from '../components/Card'
 
 // 组件类型定义
 export type { CardProps } from '../types'

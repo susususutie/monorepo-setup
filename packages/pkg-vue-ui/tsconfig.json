@@ -1,23 +1,23 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": [
-    "src/**/*",
-    "src/**/*.vue"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
   "compilerOptions": {
-    "baseUrl": ".",
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "declaration": true,
-    "declarationMap": true,
-    "outDir": "dist",
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "declarationMap": false,
+    "emitDeclarationOnly": false,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "Bundler",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
-    "noEmit": true,
-    "preserveValueImports": false,
-    "skipLibCheck": true
-  }
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false
+  },
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
 }
