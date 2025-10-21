@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { version as viteVersion } from 'vite/package.json'
 import { version as vueVersion } from 'vue'
-import { formatDate, capitalize, one, test, Status, CONFIG } from 'pkg-utils'
-import { createVueMessage, version as vueUiVersion } from 'pkg-vue-ui'
+import { formatDate, capitalize, one, test, Status, CONFIG } from '@monorepo-setup/pkg-utils'
+import { createVueMessage, version as vueUiVersion } from '@monorepo-setup/pkg-vue-ui'
 import HelloWorld from './components/HelloWorld.vue'
 import ImportDemo from './components/NamedImportDemo.vue'
 // import ImportDemo from './components/PathImportDemo.vue'

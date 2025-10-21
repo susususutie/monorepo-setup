@@ -11,5 +11,8 @@
   "devDependencies": {
     "typescript": "catalog:",
     "vite": "catalog:"
+  },
+  "dependencies": {
+    "@monorepo-setup/pkg-utils": "^0.0.1"
   }
 }

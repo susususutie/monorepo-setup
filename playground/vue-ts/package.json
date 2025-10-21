@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "pkg-vue-ui": "workspace:*",
-    "pkg-utils": "workspace:*",
+    "@monorepo-setup/pkg-vue-ui": "workspace:*",
+    "@monorepo-setup/pkg-utils": "workspace:*",
     "vue": "catalog:"
   },
   "devDependencies": {

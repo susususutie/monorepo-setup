@@ -16,8 +16,8 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "pkg-react-ui": ["../../packages/pkg-react-ui/src"],
-      "pkg-utils": ["../../packages/pkg-utils/src"]
+      "@monorepo-setup/pkg-react-ui": ["../../packages/pkg-react-ui/src"],
+      "@monorepo-setup/pkg-utils": ["../../packages/pkg-utils/src"]
     },
 
     /* Linting */

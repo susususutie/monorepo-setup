@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "pkg-react-ui": "workspace:*",
-    "pkg-utils": "workspace:*",
+    "@monorepo-setup/pkg-react-ui": "workspace:*",
+    "@monorepo-setup/pkg-utils": "workspace:*",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

@@ -7,10 +7,10 @@
 
     <div class="code-example">
       <h4>导入代码：</h4>
-      <pre><code>import Button from 'pkg-vue-ui/button'
-import Card from 'pkg-vue-ui/card'
-import type { ButtonProps } from 'pkg-vue-ui/button'
-import type { CardProps } from 'pkg-vue-ui/card'</code></pre>
+      <pre><code>import Button from '@monorepo-setup/pkg-vue-ui/button'
+import Card from '@monorepo-setup/pkg-vue-ui/card'
+import type { ButtonProps } from '@monorepo-setup/pkg-vue-ui/button'
+import type { CardProps } from '@monorepo-setup/pkg-vue-ui/card'</code></pre>
     </div>
 
     <div class="demo-section">
@@ -48,11 +48,11 @@ import type { CardProps } from 'pkg-vue-ui/card'</code></pre>
 
 <script setup lang="ts">
 // 路径导入 - 最佳 tree-shaking 效果
-import Button from 'pkg-vue-ui/button'
-import Card from 'pkg-vue-ui/card'
+import Button from '@monorepo-setup/pkg-vue-ui/button'
+import Card from '@monorepo-setup/pkg-vue-ui/card'
 // 路径导入类型定义
-// import type { ButtonProps } from 'pkg-vue-ui/button'
-// import type { CardProps } from 'pkg-vue-ui/card'
+// import type { ButtonProps } from '@monorepo-setup/pkg-vue-ui/button'
+// import type { CardProps } from '@monorepo-setup/pkg-vue-ui/card'
 
 // 事件处理函数
 const handleClick = (name: string) => {

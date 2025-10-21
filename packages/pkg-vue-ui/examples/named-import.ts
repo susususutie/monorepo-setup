@@ -1,6 +1,5 @@
 // 方式2: 按需导入组件
-import { Button, Card } from 'pkg-vue-ui'
-import type { ButtonProps, CardProps } from 'pkg-vue-ui'
+import { Button, Card } from '@monorepo-setup/pkg-vue-ui'
 
 export default {
   components: {

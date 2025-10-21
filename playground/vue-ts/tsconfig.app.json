@@ -4,8 +4,8 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "baseUrl": ".",
     "paths": {
-      "pkg-vue-ui": ["../../packages/pkg-vue-ui/src"],
-      "pkg-utils": ["../../packages/pkg-utils/src"]
+      "@monorepo-setup/pkg-vue-ui": ["../../packages/pkg-vue-ui/src"],
+      "@monorepo-setup/pkg-utils": ["../../packages/pkg-utils/src"]
     },
 
     /* Linting */

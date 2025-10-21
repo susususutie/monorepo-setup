@@ -7,8 +7,8 @@
 
     <div class="code-example">
       <h4>导入代码：</h4>
-      <pre><code>import { Button, Card } from 'pkg-vue-ui'
-import type { ButtonProps, CardProps } from 'pkg-vue-ui'</code></pre>
+      <pre><code>import { Button, Card } from '@monorepo-setup/pkg-vue-ui'
+import type { ButtonProps, CardProps } from '@monorepo-setup/pkg-vue-ui'</code></pre>
     </div>
 
     <div class="demo-section">
@@ -41,9 +41,9 @@ import type { ButtonProps, CardProps } from 'pkg-vue-ui'</code></pre>
 
 <script setup lang="ts">
 // 按需导入组件（实际使用时就是这样导入）
-import { Button, Card } from 'pkg-vue-ui'
+import { Button, Card } from '@monorepo-setup/pkg-vue-ui'
 // 导入类型定义
-// import type { ButtonProps } from 'pkg-vue-ui'
+// import type { ButtonProps } from '@monorepo-setup/pkg-vue-ui'
 
 // 事件处理
 const handleClick = (buttonType: string) => {

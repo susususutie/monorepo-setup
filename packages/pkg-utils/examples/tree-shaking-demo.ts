@@ -13,7 +13,7 @@ import { clamp } from '@monorepo-setup/pkg-utils'
 // 结果：只有 clamp 函数和其依赖会被打包，约 500B
 
 // ===== ✅ 最佳：模块化导入 =====
-import { clamp as mathClamp } from 'pkg-utils/math'
+import { clamp as mathClamp } from '@monorepo-setup/pkg-utils/math'
 // 结果：最佳的 tree-shaking 效果，约 200B
 
 // ===== Bundle 大小对比 =====
@@ -30,7 +30,7 @@ Tree-shaking 效果对比：
 ├── Bundle 大小: ~500B-2KB (gzipped)
 └── 适用场景: 使用部分功能
 
-📦 模块化导入 (import { clamp } from 'pkg-utils/math')
+📦 模块化导入 (import { clamp } from '@monorepo-setup/pkg-utils/math')
 ├── 最精确的导入
 ├── Bundle 大小: ~200B-1KB (gzipped)
 └── 适用场景: 追求最小 bundle 大小

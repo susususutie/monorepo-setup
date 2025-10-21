@@ -40,12 +40,12 @@ pnpm dev
 
 ```typescript
 // 按需导入（推荐）
-import { clamp, capitalize, unique } from 'pkg-utils'
+import { clamp, capitalize, unique } from '@monorepo-setup/pkg-utils'
 
 // 模块化导入（最佳 tree-shaking）
-import { clamp } from 'pkg-utils/math'
-import { capitalize } from 'pkg-utils/string'
-import { LRUCache } from 'pkg-utils/cache'
+import { clamp } from '@monorepo-setup/pkg-utils/math'
+import { capitalize } from '@monorepo-setup/pkg-utils/string'
+import { LRUCache } from '@monorepo-setup/pkg-utils/cache'
 
 // 使用示例
 const result = clamp(10, 0, 5) // 5
@@ -87,22 +87,23 @@ pnpm --filter vite-react-ts add -D eslint-plugin-react
 export default defineConfig({
   resolve: {
     alias: {
-      'pkg-react-ui': resolve(__dirname, '../../packages/pkg-react-ui/src'),
-      'pkg-vue-ui': resolve(__dirname, '../../packages/pkg-vue-ui/src'),
-      'pkg-utils': resolve(__dirname, '../../packages/pkg-utils/src'),
+      '@monorepo-setup/pkg-react-ui': resolve(__dirname, '../../packages/pkg-react-ui/src'),
+      '@monorepo-setup/pkg-vue-ui': resolve(__dirname, '../../packages/pkg-vue-ui/src'),
+      '@monorepo-setup/pkg-utils': resolve(__dirname, '../../packages/pkg-utils/src'),
     },
   },
 })
 ```
 
 ```json
+// 用于编辑器中点击跳转
 // playground/vite-react-ts/tsconfig.app.json
 {
   "compilerOptions": {
     "paths": {
-      "pkg-react-ui": ["../../packages/pkg-react-ui/src"],
-      "pkg-vue-ui": ["../../packages/pkg-vue-ui/src"],
-      "pkg-utils": ["../../packages/pkg-utils/src"]
+      "@monorepo-setup/pkg-react-ui": ["../../packages/pkg-react-ui/src"],
+      "@monorepo-setup/pkg-vue-ui": ["../../packages/pkg-vue-ui/src"],
+      "@monorepo-setup/pkg-utils": ["../../packages/pkg-utils/src"]
     }
   }
 }

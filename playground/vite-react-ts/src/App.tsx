@@ -3,8 +3,9 @@ import { useState, version } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { one, test, capitalize, formatDate, Status, CONFIG } from 'pkg-utils'
-import { Demo } from 'pkg-react-ui'
+import { one, test, capitalize, formatDate, Status, CONFIG } from '@monorepo-setup/pkg-utils'
+import { Demo } from '@monorepo-setup/pkg-react-ui'
+import { ListDemo } from '@monorepo-setup/pkg-react-ui/list'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,14 +29,15 @@ function App() {
       <p>Current time: {currentDate}</p>
       <p>App status: {Status.SUCCESS}</p>
       <Demo />
+      <ListDemo />
       <div className='card'>
         <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
         <p>
-          Edit <code>src/App.tsx</code> and save to test HMR<br/>
+          Edit <code>src/App.tsx</code> and save to test HMR
+          <br />
           Math result: {mathResult} | API URL: {CONFIG.API_BASE_URL}
         </p>
       </div>
-      <p className='read-the-docs'>Click on the Vite and React logos to learn more</p>
     </>
   )
 }

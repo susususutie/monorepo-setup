@@ -45,8 +45,8 @@ const showCard = ref(false)
 const loadComponent = async (name: string) => {
   // 使用明确的路径映射，避免Vite动态导入警告
   const componentMap: Record<string, () => Promise<any>> = {
-    button: () => import('pkg-vue-ui/button'),
-    card: () => import('pkg-vue-ui/card')
+    button: () => import('@monorepo-setup/pkg-vue-ui/button'),
+    card: () => import('@monorepo-setup/pkg-vue-ui/card')
   }
   
   const loadModule = componentMap[name]

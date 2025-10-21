@@ -1,8 +1,8 @@
 // 方式3: 路径导入（最佳tree-shaking效果）
-import Button from 'pkg-vue-ui/button'
-import Card from 'pkg-vue-ui/card'
-import type { ButtonProps } from 'pkg-vue-ui/button'
-import type { CardProps } from 'pkg-vue-ui/card'
+import Button from '@monorepo-setup/pkg-vue-ui/button'
+import Card from '@monorepo-setup/pkg-vue-ui/card'
+import type { ButtonProps } from '@monorepo-setup/pkg-vue-ui/button'
+import type { CardProps } from '@monorepo-setup/pkg-vue-ui/card'
 
 export default {
   components: {

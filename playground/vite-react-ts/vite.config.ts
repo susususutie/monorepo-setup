@@ -7,8 +7,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "pkg-react-ui": path.resolve(__dirname, '../../packages/pkg-react-ui/src'),
-      "pkg-utils": path.resolve(__dirname, '../../packages/pkg-utils/src'),
+      "@monorepo-setup/pkg-react-ui": path.resolve(__dirname, '../../packages/pkg-react-ui/src'),
+      "@monorepo-setup/pkg-utils": path.resolve(__dirname, '../../packages/pkg-utils/src'),
     }
   },
 })

@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import PkgVueUi from 'pkg-vue-ui'
+import PkgVueUi from '@monorepo-setup/pkg-vue-ui'
 
 const app = createApp(App)
 

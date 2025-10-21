@@ -39,11 +39,11 @@ pnpm add pkg-utils@workspace:*
 
 ```typescript
 // 按需导入（推荐）
-import { clamp, capitalize, unique } from 'pkg-utils'
+import { clamp, capitalize, unique } from '@monorepo-setup/pkg-utils'
 
 // 模块化导入（最佳 tree-shaking）
-import { clamp } from 'pkg-utils/math'
-import { capitalize } from 'pkg-utils/string'
+import { clamp } from '@monorepo-setup/pkg-utils/math'
+import { capitalize } from '@monorepo-setup/pkg-utils/string'
 ```
 
 ## 📋 文档和示例

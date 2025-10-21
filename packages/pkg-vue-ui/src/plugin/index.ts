@@ -1,7 +1,6 @@
 import type { App, Plugin } from 'vue'
 import Button from '../components/Button.vue'
 import Card from '../components/Card.vue'
-import type { ButtonProps, ButtonType, CardProps } from '../types'
 
 // Vue插件安装函数
 const install: Plugin['install'] = (app: App) => {

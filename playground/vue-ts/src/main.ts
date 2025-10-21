@@ -3,7 +3,7 @@ import './style.css'
 import App from './App.vue'
 
 // 全局导入 pkg-vue-ui（注释掉表示未启用）
-// import PkgVueUi from 'pkg-vue-ui'
+// import PkgVueUi from '@monorepo-setup/pkg-vue-ui'
 
 const app = createApp(App)
 
