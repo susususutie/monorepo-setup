@@ -26,6 +26,10 @@
     "./list": {
       "types": "./dist/list/index.d.ts",
       "import": "./dist/list/index.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.js"
     }
   },
   "types": "./dist/index.d.ts",

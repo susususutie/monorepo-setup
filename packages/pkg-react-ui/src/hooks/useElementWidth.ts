@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 /**
  * @description 获取元素宽度
  */
-export default function useElementWidth(opts?: {
+export default function useElementWidth<T extends HTMLElement = HTMLDivElement>(opts?: {
   /**
    * 防抖时间，默认 120ms
    */
@@ -12,14 +12,14 @@ export default function useElementWidth(opts?: {
   /**
    * 元素 ref
    */
-  ref: React.RefObject<HTMLElement>
+  ref: React.RefObject<T>
   /**
    * 元素宽度
    */
   width?: number
 } {
   const { debounceMs = 120 } = opts ?? {}
-  const ref = useRef<HTMLElement>(null)
+  const ref = useRef<T>(null)
   const [width, setWidth] = useState<number | undefined>(undefined)
 
   useEffect(() => {

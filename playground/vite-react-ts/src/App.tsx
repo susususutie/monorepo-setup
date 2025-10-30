@@ -1,11 +1,8 @@
 import { version as viteVersion } from 'vite/package.json'
 import { useState, version } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { one, test, capitalize, formatDate, Status, CONFIG } from '@monorepo-setup/pkg-utils'
-import { Demo } from '@monorepo-setup/pkg-react-ui'
-import { ListDemo } from '@monorepo-setup/pkg-react-ui/list'
+import UseOptimalCols from './demos/useOptimalCols'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,21 +12,12 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href='https://vite.dev' target='_blank' rel='noreferrer'>
-          <img src={viteLogo} className='logo' alt='Vite logo' />
-        </a>
-        <a href='https://react.dev' target='_blank' rel='noreferrer'>
-          <img src={reactLogo} className='logo react' alt='React logo' />
-        </a>
-      </div>
       <h1>
         {appName} - Vite@{viteVersion} + React@{version}
       </h1>
       <p>Current time: {currentDate}</p>
       <p>App status: {Status.SUCCESS}</p>
-      <Demo />
-      <ListDemo />
+      <UseOptimalCols />
       <div className='card'>
         <button onClick={() => setCount(count => count + 1)}>count is {count}</button>
         <p>

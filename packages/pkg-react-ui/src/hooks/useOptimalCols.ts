@@ -87,7 +87,7 @@ function getOptimalCols(opts: {
  * </div>
  * ```
  */
-export default function useOptimalCols(
+export default function useOptimalCols<T extends HTMLElement = HTMLDivElement>(
   /**
    * 单个元素的理想宽度
    */
@@ -105,12 +105,12 @@ export default function useOptimalCols(
    */
   compressRatio: number = 0.8
 ): {
-  ref: React.RefObject<HTMLElement>
+  ref: React.RefObject<T>
   cols: number
   itemWidth: number
   parentWidth: number
 } {
-  const { ref, width = 0 } = useElementWidth()
+  const { ref, width = 0 } = useElementWidth<T>()
   const { cols, itemWidth } = getOptimalCols({ parentWidth: width, itemIdealWidth, compressRatio, gap, strategy })
   return { ref, cols, itemWidth, parentWidth: width }
 }
