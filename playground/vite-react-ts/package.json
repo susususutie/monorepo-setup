@@ -12,6 +12,7 @@
   "dependencies": {
     "@monorepo-setup/pkg-react-ui": "workspace:*",
     "@monorepo-setup/pkg-utils": "workspace:*",
+    "antd": "^5.27.2",
     "react": "catalog:",
     "react-dom": "catalog:"
   },

@@ -4,9 +4,15 @@
   "type": "module",
   "scripts": {
     "build": "pnpm -r build",
-    "dev": "pnpm --filter vanilla-ts dev",
+    "dev:ts": "pnpm --filter vanilla-ts dev",
+    "build:ts": "pnpm --filter vanilla-ts build",
+    "preview:ts": "pnpm --filter vanilla-ts preview",
     "dev:react": "pnpm --filter vite-react-ts dev",
-    "dev:vue": "pnpm --filter vue-ts dev"
+    "build:react": "pnpm --filter vite-react-ts build",
+    "preview:react": "pnpm --filter vite-react-ts preview",
+    "dev:vue": "pnpm --filter vue-ts dev",
+    "build:vue": "pnpm --filter vue-ts build",
+    "preview:vue": "pnpm --filter vue-ts preview"
   },
   "devDependencies": {},
   "engines": {

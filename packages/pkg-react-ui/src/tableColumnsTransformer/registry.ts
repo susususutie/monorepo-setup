@@ -1,30 +1,4 @@
-import { type ColumnType } from 'antd/es/table'
-
-// 通用类型定义
-export interface TransformerParams {
-  [key: string]: any
-}
-
-export type ColumnTransformer = (column: ColumnType<any>, params?: TransformerParams) => ColumnType<any>
-
-// 内置的 valueType 类型
-export type BuiltinValueType = 
-  | 'money'
-  | 'currency'
-  | 'date'
-  | 'datetime'
-  | 'status'
-  | 'number'
-  | 'boolean'
-  | 'bool'
-  | 'ellipsis'
-  | 'text'
-
-// 动态扩展的 valueType 类型
-export type CustomValueType = string & {}
-
-// 所有可能的 valueType 类型
-export type AllValueType = BuiltinValueType | CustomValueType
+import { type AnyObject, type AntdColumnType, type ValueType, type ValueParams, type ColumnTransformer } from './types'
 
 // Transformer 注册表
 const valueTypeRegistry = new Map<string, ColumnTransformer>()
@@ -46,10 +20,7 @@ export function getTransformer<T extends string>(valueType: T): ColumnTransforme
 }
 
 // 类型安全的注册 transformer
-export function registerTransformer<T extends string>(
-  valueType: T, 
-  transformer: ColumnTransformer
-): void {
+export function registerTransformer<T extends string>(valueType: T, transformer: ColumnTransformer): void {
   if (typeof valueType !== 'string' || valueType.trim() === '') {
     throw new Error('valueType 必须是非空字符串')
   }
@@ -59,15 +30,8 @@ export function registerTransformer<T extends string>(
   typedRegistry.set(valueType, transformer)
 }
 
-// 批量注册 transformers
-export function registerTransformers(transformers: Record<string, ColumnTransformer>): void {
-  Object.entries(transformers).forEach(([key, transformer]) => {
-    registerTransformer(key, transformer)
-  })
-}
-
 // 注销 transformer
-export function unregisterTransformer<T extends string>(valueType: T): boolean {
+export function unregisterTransformer<T extends string = string>(valueType: T): boolean {
   return typedRegistry.delete(valueType)
 }
 
@@ -77,6 +41,6 @@ export function getRegisteredTypes(): string[] {
 }
 
 // 检查是否已注册某个 transformer
-export function hasTransformer<T extends string>(valueType: T): boolean {
+export function hasTransformer<T extends string = string>(valueType: T): boolean {
   return typedRegistry.has(valueType)
 }
