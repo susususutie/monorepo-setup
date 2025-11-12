@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^6.0.1",
     "@monorepo-setup/pkg-react-ui": "workspace:*",
     "@monorepo-setup/pkg-utils": "workspace:*",
     "antd": "^5.27.2",
