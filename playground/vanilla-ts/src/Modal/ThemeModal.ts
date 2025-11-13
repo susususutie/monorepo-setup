@@ -3,7 +3,7 @@ export interface IThemeModal {
   toggleTheme: () => void
 }
 
-export const ID_THEME_MODAL = Symbol('ThemeModal')
+export const IdThemeModal = Symbol('ThemeModal')
 
 export default class ThemeModal implements IThemeModal {
   _theme: string = 'light'

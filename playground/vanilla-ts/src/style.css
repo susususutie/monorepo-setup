@@ -1,0 +1,320 @@
+:root {
+  --bg: #1e1e1e;
+  --fg: #cccccc;
+  --bar: #2d2d30;
+  --sidebar-bg: #252526;
+  --panel-bg: #1f1f1f;
+  --border: #3c3c3c;
+  --accent: #0e639c;
+  --hover: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#titlebar,
+#footerbar {
+  flex-shrink: 0;
+}
+
+#content {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+#activitybar {
+  width: 28px;
+  background: var(--bar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+#sidebar {
+  width: 260px;
+  min-width: 200px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+#editor {
+  flex: 1;
+  background: #1e1e1e;
+  overflow: auto;
+}
+
+#panel {
+  background: var(--panel-bg);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+}
+
+#auxiliarybar {
+  width: 220px;
+  min-width: 180px;
+  background: var(--sidebar-bg);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+#footerbar {
+  height: 26px;
+  background: var(--bar);
+  border-top: 1px solid var(--border);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.titlebar-part {
+  height: 32px;
+  background: var(--bar);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  gap: 12px;
+  user-select: none;
+}
+
+.titlebar-part .title {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #bbbbbb;
+}
+
+.titlebar-part .actions {
+  display: flex;
+  gap: 8px;
+}
+
+.titlebar-part button {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--fg);
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.titlebar-part button:hover {
+  background: var(--hover);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.titlebar-part button.is-inactive {
+  opacity: 0.4;
+}
+
+.activitybar-part {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0 6px;
+  gap: 6px;
+}
+
+.activitybar-actions,
+.activitybar-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.activitybar-bottom {
+  margin-top: auto;
+}
+
+.activitybar-item {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.activitybar-item:hover {
+  background: var(--hover);
+}
+
+.activitybar-item.is-active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.sidebar-part,
+.panel-part,
+.auxiliarybar-part {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.panel-part {
+  background: var(--panel-bg);
+}
+
+.part-header {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid var(--border);
+}
+
+.part-title {
+  font-weight: 600;
+}
+
+.part-content {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.part-content button {
+  align-self: flex-start;
+  background: var(--accent);
+  border: none;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.part-content button:hover {
+  filter: brightness(1.1);
+}
+
+.part-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.part-toggle:hover {
+  background: var(--hover);
+}
+
+.editor-part {
+  height: 100%;
+  padding: 16px;
+  overflow: auto;
+}
+
+.editor-placeholder {
+  padding: 24px;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.footerbar-part {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 12px;
+  gap: 16px;
+}
+
+.footer-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-action {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.footer-action:hover {
+  background: var(--hover);
+}
+
+.footer-action.is-active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.footer-indicator {
+  opacity: 0.85;
+}
+
+.component {
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

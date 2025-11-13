@@ -1,8 +1,8 @@
-import { ICountModal, ID_COUNT_MODAL } from '../Modal'
+import { ICountModal, IdCountModal } from '../Modal'
 import { type IView } from './View'
 
 export default class ButtonView implements IView {
-  static deps = [ID_COUNT_MODAL]
+  static deps = [IdCountModal]
   element: HTMLButtonElement
   modal: ICountModal
   constructor(modal: ICountModal) {

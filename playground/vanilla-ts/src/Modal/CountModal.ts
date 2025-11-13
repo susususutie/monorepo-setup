@@ -6,7 +6,7 @@ export interface ICountModal {
   offDidChange: (fn: (count: number) => void) => void
 }
 
-export const ID_COUNT_MODAL = Symbol('CountModal')
+export const IdCountModal = Symbol('CountModal')
 
 export default class CountModal implements ICountModal {
   _count: number = 0

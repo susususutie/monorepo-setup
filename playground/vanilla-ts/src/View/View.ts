@@ -1,10 +1,9 @@
 export interface IView {
-  render(parent: HTMLElement): void
+  render(parent: HTMLElement, ...args: any[]): void
 }
 
 export default class View implements IView {
   static deps: symbol[] = []
   constructor() {}
-  render(parent: HTMLElement) {
-  }
+  render(_parent: HTMLElement, ..._args: any[]) {}
 }

@@ -1,27 +1,68 @@
-class ModalManager {
-  private _ctor: Map<symbol, any>
-  private _inst: Map<symbol, any>
+type LifecycleKind = 'Delayed' | 'Eager' | 'Transient'
+type Identifier = string | symbol
+
+interface RegistrationDescriptor {
+  cls: any
+  type: LifecycleKind
+}
+
+class InstantiationService {
+  private readonly _singleton: Map<Identifier, unknown>
+  private readonly _registry: Map<Identifier, RegistrationDescriptor>
+
   constructor() {
-    this._ctor = new Map()
-    this._inst = new Map()
+    this._singleton = new Map()
+    this._registry = new Map()
   }
-  register(id: symbol, cls: any) {
-    this._ctor.set(id, cls)
-  }
-  get(id: symbol) {
-    if (!this._inst.has(id)) {
-      const Cls = this._ctor.get(id)
-      const args = (Cls.deps || []).map((dep: symbol) => this.get(dep)) // 递归
-      this._inst.set(id, new Cls(...args))
+
+  register(id: Identifier, cls: any, type: LifecycleKind = 'Delayed') {
+    if (!cls) {
+      throw new Error(`InstantiationService.register: 无效的类，id=${String(id)}`)
     }
-    return this._inst.get(id)
+
+    this._registry.set(id, { cls, type })
+
+    if (type === 'Eager') {
+      this._singleton.set(id, this._instantiate(cls))
+    } else if (type === 'Transient') {
+      this._singleton.delete(id)
+    }
+
+    return this
   }
-  createInstance(Cls: any) {
-    // 实例化任意类
-    const args = (Cls.deps || []).map((dep: symbol) => this.get(dep))
+
+  get<T = unknown>(id: Identifier): T {
+    const descriptor = this._registry.get(id)
+    if (!descriptor) {
+      throw new Error(`InstantiationService.get: 未注册的 id=${String(id)}`)
+    }
+
+    const { cls, type } = descriptor
+
+    if (type === 'Transient') {
+      return this._instantiate(cls)
+    }
+
+    if (!this._singleton.has(id)) {
+      this._singleton.set(id, this._instantiate(cls))
+    }
+
+    return this._singleton.get(id) as T
+  }
+
+  createInstance<T = unknown>(Cls: any): T {
+    if (!Cls) {
+      throw new Error('InstantiationService.createInstance: 无效的类')
+    }
+    return this._instantiate(Cls)
+  }
+
+  private _instantiate<T>(Cls: any): T {
+    const deps: Identifier[] = Array.isArray(Cls.deps) ? Cls.deps : []
+    const args = deps.map((dep) => this.get(dep))
     return new Cls(...args)
   }
 }
 
-const modalManager = new ModalManager()
-export default modalManager
+const instantiationService = new InstantiationService()
+export default instantiationService
