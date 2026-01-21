@@ -1,14 +1,12 @@
-import { type ColumnType } from 'antd/es/table'
+import { type ColumnTransformer } from '../types'
 
 export interface BooleanParams {
   trueText?: string
   falseText?: string
 }
 
-export type BooleanTransformer = (column: ColumnType<any>, params?: BooleanParams) => ColumnType<any>
-
 // 布尔值转换器
-export const booleanTransformer: BooleanTransformer = (column, params = {}) => {
+export const booleanTransformer: ColumnTransformer<BooleanParams> = (params = {}, column) => {
   const { trueText = '是', falseText = '否' } = params
 
   return {

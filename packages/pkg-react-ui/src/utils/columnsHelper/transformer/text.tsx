@@ -1,8 +1,7 @@
-import { type ColumnType } from 'antd/es/table'
+import { type ColumnTransformer } from '../types'
+
 import { Tooltip, type TooltipProps } from 'antd'
 import { Fragment } from 'react'
-
-export const textValueType = 'text' as const
 
 export type TextParams = {
   /**
@@ -15,9 +14,7 @@ export type TextParams = {
   placement?: TooltipProps['placement']
 }
 
-export type TextTransformer = (column: ColumnType<any>, params?: TextParams) => ColumnType<any>
-
-export const textTransformer: TextTransformer = (column, params = {}) => {
+export const textTransformer: ColumnTransformer<TextParams> = (params = {}, column) => {
   const { multiple = false } = params
   // TODO: 空值占位应该来源于全局配置（tableColumnsTransformer.nillPlaceholder）
   const nillPlaceholder = '-'

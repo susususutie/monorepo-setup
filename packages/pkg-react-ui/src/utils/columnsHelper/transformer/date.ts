@@ -1,13 +1,11 @@
-import { type ColumnType } from 'antd/es/table'
+import { type ColumnTransformer } from '../types'
 
 export interface DateParams {
   format?: 'YYYY-MM-DD' | 'YYYY-MM-DD HH:mm:ss' | 'MM-DD' | 'HH:mm:ss'
 }
 
-export type DateTransformer = (column: ColumnType<any>, params?: DateParams) => ColumnType<any>
-
 // 日期格式化
-export const dateTransformer: DateTransformer = (column, params = {}) => {
+export const dateTransformer: ColumnTransformer<DateParams> = (params = {}, column) => {
   const { format = 'YYYY-MM-DD' } = params
 
   return {

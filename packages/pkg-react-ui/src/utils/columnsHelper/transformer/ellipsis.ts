@@ -1,14 +1,12 @@
-import { type ColumnType } from 'antd/es/table'
+import { type ColumnTransformer } from '../types'
 
 export interface EllipsisParams {
   maxLength?: number
   suffix?: string
 }
 
-export type EllipsisTransformer = (column: ColumnType<any>, params?: EllipsisParams) => ColumnType<any>
-
 // 文本截断
-export const ellipsisTransformer: EllipsisTransformer = (column, params = {}) => {
+export const ellipsisTransformer: ColumnTransformer<EllipsisParams> = (params = {}, column) => {
   const { maxLength = 50, suffix = '...' } = params
 
   return {

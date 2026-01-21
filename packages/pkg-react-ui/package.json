@@ -31,6 +31,10 @@
       "types": "./dist/list/index.d.ts",
       "import": "./dist/list/index.js"
     },
+    "./utils": {
+      "types": "./dist/utils/index.d.ts",
+      "import": "./dist/utils/index.js"
+    },
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
@@ -60,6 +64,7 @@
     "react-dom": "^18.3.1"
   },
   "scripts": {
+    "preinstall": "tsc -p tsconfig.json",
     "build": "tsc -p tsconfig.json"
   },
   "publishConfig": {
