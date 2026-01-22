@@ -6,6 +6,7 @@ import { moneyTransformer } from './transformer/money'
 import { numberTransformer } from './transformer/number'
 import { statusTransformer } from './transformer/status'
 import { textTransformer } from './transformer/text'
+import actionsTransformer from './transformer/actions'
 import { type AnyObject, type BuiltInValueParamsMap, type ColumnTransformer, type ColumnsTypePlus } from './types'
 
 export default function createHelper() {
@@ -24,6 +25,7 @@ export default function createHelper() {
     bool: booleanTransformer, // 别名
     ellipsis: ellipsisTransformer,
     text: textTransformer,
+    actions: actionsTransformer,
   } as Record<keyof BuiltInValueParamsMap, ColumnTransformer>
 
   const transformColumnsPlus = <RecordType = AnyObject>(cols: ColumnsTypePlus<RecordType>): ColumnsType<RecordType> => {

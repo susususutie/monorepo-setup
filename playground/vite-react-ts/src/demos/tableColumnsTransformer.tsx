@@ -1,5 +1,5 @@
 import { tableColumnsTransformer, registerValueType, type TableColumnsTypePlus } from '@monorepo-setup/pkg-react-ui'
-import { Table, type TableColumnsType } from 'antd'
+import { Table, type TableColumnsType, Typography } from 'antd'
 
 registerValueType<{ count: 2 | 3 } | undefined>('myValueType', (params, column) => {
   return { ...column, title: `更新${params?.count ?? 0}次` }
@@ -7,7 +7,7 @@ registerValueType<{ count: 2 | 3 } | undefined>('myValueType', (params, column) 
 
 const dataSource = Array.from({ length: 27 }, (_, index) => ({
   id: index,
-  name: `Name ${index}`.repeat(Math.round(Math.random() * 10)),
+  name: `Name${index}`.repeat(Math.round(Math.random() * 10)),
   age: Math.round(Math.random() * 100),
   email: `email${index}@example.com`,
   description: `Description ${index}\nDescription ${index}\nDescription ${index}`,
@@ -25,7 +25,7 @@ const columnsPlus: TableColumnsTypePlus<DataType> = [
       false,
       null,
       undefined, // children 中的 false,null,undefined 也会被过滤，但 children 空数组会保留，以保持与 antd 一致
-      { title: 'Name', dataIndex: 'name', width: 100, valueType: 'text' },
+      { title: 'Name', dataIndex: 'name', width: 80, valueType: 'text' },
       { title: 'Age', dataIndex: 'age', width: 80, valueType: 'text' },
       {
         key: 'sub group',
@@ -43,7 +43,7 @@ const columnsPlus: TableColumnsTypePlus<DataType> = [
       },
     ],
   },
-  { key: 'name', title: 'Name', dataIndex: 'name', valueType: 'text' },
+  { key: 'name', title: 'Name', dataIndex: 'name', width: 80, valueType: 'text' },
   { key: 'age', title: 'Age', dataIndex: 'age', valueType: 'text' },
   { key: 'email', title: 'Email', dataIndex: 'email', valueType: 'text' },
   { title: '多行文本', dataIndex: 'description', valueType: 'text', valueParams: { multiple: true } },
@@ -56,13 +56,28 @@ const columnsPlus: TableColumnsTypePlus<DataType> = [
   },
   { title: '创建', dataIndex: ['created_at'], valueType: 'date', valueParams: { format: 'YYYY-MM-DD' } },
   { title: '更新', dataIndex: ['updated_at'], valueType: 'myValueType' }, // 自定义 valueType 需要在 d.ts 文件中扩展 CustomValueParamsMap 类型，才有类型提示
+  {
+    key: 'actions',
+    title: '操作',
+    fixed: 'right',
+    valueType: 'actions',
+    valueParams: {   },
+    render: (_value, row) => {
+      return [
+        row.status === 'success' && <Typography.Link key='edit'>编辑</Typography.Link>,
+        <Typography.Link key='delete' type='danger'>
+          删除
+        </Typography.Link>,
+      ]
+    },
+  },
 ]
 const antdColumns: TableColumnsType<DataType> = [
   {
     key: 'group',
     title: 'group',
     children: [
-      { title: 'Name', dataIndex: 'name', width: 100 },
+      { title: 'Name', dataIndex: 'name', width: 80 },
       { title: 'Age', dataIndex: 'age', width: 80 },
       {
         key: 'sub group',

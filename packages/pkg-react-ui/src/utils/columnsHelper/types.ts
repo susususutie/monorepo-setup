@@ -8,6 +8,7 @@ import { type NumberParams } from './transformer/number'
 import { type BooleanParams } from './transformer/boolean'
 import { type EllipsisParams } from './transformer/ellipsis'
 import { type TextParams } from './transformer/text'
+import { type ActionsParams } from './transformer/actions'
 
 export type AnyObject = Record<PropertyKey, any> // 'antd/es/_util/type'
 
@@ -23,6 +24,7 @@ export interface BuiltInValueParamsMap {
   bool: BooleanParams // 别名
   ellipsis: EllipsisParams
   text: TextParams
+  actions: ActionsParams
 }
 export interface CustomValueParamsMap {}
 export type ValueParamsMap = BuiltInValueParamsMap & CustomValueParamsMap
